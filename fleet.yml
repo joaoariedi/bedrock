@@ -1,0 +1,7 @@
+contexts:
+  default:
+    address: https://100.93.31.1:8080
+    tls-skip-verify: true
+server:
+  cert: /etc/fleet/certs/cert.pem
+  key: /etc/fleet/certs/key.pem
