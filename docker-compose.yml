@@ -9,8 +9,8 @@ services:
     command: [
       "fleet",
       "serve",
-      #"-c",
-      #"/home/fleet/fleet.yml",
+      "-c",
+      "/home/fleet/fleet.yml",
     ]
     environment:
       #- FLEET_SERVER_ADDRESS=127.0.0.1:8080
@@ -42,7 +42,10 @@ services:
       - FLEET_MYSQL_USERNAME=fleet
       - FLEET_MYSQL_PASSWORD=insecure
       - FLEET_MYSQL_DATABASE=fleet
-        
+    depends_on:
+      mysql:
+        condition: service_started
+     
   # To test with MariaDB, set FLEET_MYSQL_IMAGE to mariadb:10.6 or the like (note MariaDB is not
   # officially supported).
   # To run in macOS M1, set FLEET_MYSQL_IMAGE=arm64v8/mysql:oracle FLEET_MYSQL_PLATFORM=linux/arm64/v8
