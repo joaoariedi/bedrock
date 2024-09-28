@@ -2,7 +2,7 @@
 *.exe
 
 # output directories
-#build
+build
 vendor
 node_modules
 dist
